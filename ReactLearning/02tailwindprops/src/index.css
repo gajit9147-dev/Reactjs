@@ -1,0 +1,138 @@
+
+@import "tailwindcss";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Georgia", "Times New Roman", serif;
+	background: radial-gradient(circle at 20% 20%, #f4f0e8, #e6dcd1 60%, #d7cbbf 100%);
+	color: #2b241f;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+.page {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 20px 48px;
+	display: grid;
+	gap: 24px;
+}
+
+.page-header {
+	border: 2px solid #2b241f;
+	padding: 20px 24px;
+	background: linear-gradient(120deg, #fff7eb, #efe2d4 70%);
+	box-shadow: 6px 6px 0 #2b241f;
+}
+
+.page-header h1 {
+	margin: 0 0 8px;
+	font-size: 32px;
+	letter-spacing: 1px;
+}
+
+.page-header p {
+	margin: 0;
+	opacity: 0.8;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+}
+
+.game-wrapper {
+	display: grid;
+	place-items: center;
+}
+
+.game {
+	display: grid;
+	grid-template-columns: minmax(260px, 1fr) 220px;
+	gap: 20px;
+	align-items: start;
+	background: #fff7eb;
+	border: 2px solid #2b241f;
+	padding: 20px;
+	box-shadow: 8px 8px 0 #2b241f;
+}
+
+.game-board {
+	display: grid;
+	gap: 10px;
+}
+
+.status {
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.board-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.square {
+	width: 90px;
+	height: 90px;
+	border: 2px solid #2b241f;
+	background: #fdf6ec;
+	color: #2b241f;
+	font-size: 32px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: transform 120ms ease, background 120ms ease;
+}
+
+.square:hover {
+	transform: translateY(-2px);
+	background: #f2e2cf;
+}
+
+.game-info {
+	max-height: 320px;
+	overflow: auto;
+	border-left: 2px solid #2b241f;
+	padding-left: 12px;
+}
+
+.game-info ol {
+	margin: 0;
+	padding-left: 18px;
+}
+
+.game-info button {
+	width: 100%;
+	margin: 4px 0;
+	padding: 6px 8px;
+	border: 1px solid #2b241f;
+	background: #f9efdf;
+	cursor: pointer;
+}
+
+@media (max-width: 720px) {
+	.game {
+		grid-template-columns: 1fr;
+	}
+
+	.square {
+		width: 80px;
+		height: 80px;
+	}
+
+	.game-info {
+		border-left: none;
+		border-top: 2px solid #2b241f;
+		padding-left: 0;
+		padding-top: 12px;
+	}
+}
+
